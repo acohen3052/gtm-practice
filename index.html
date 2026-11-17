@@ -11,6 +11,33 @@
   <meta charset="UTF-8">
   <title>GTM Practice</title>
 </head>
+  
+<hr>
+<h2>Practice Product</h2>
+<p>Running Shoes - $80</p>
+<button id="add-to-cart-btn">Add to Cart</button>
+
+<script>
+document.getElementById('add-to-cart-btn')
+  .addEventListener('click', function() {
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+      event: 'add_to_cart',
+      ecommerce: {
+        currency: 'USD',
+        value: 80,
+        items: [{
+          item_id: 'SHOES001',
+          item_name: 'Running Shoes',
+          price: 80,
+          quantity: 1
+        }]
+      }
+    });
+  });
+</script>
+
 <body>
   <h1>Welcome to my GTM Practice Website!</h1>
   <p>Let's practice tracking user interactions.</p>
